@@ -4,7 +4,7 @@ namespace BeamMeUp
 {
     public class Plugin : PulsarPlugin
     {
-        public override string Version => "0.0.0";
+        public override string Version => "0.0.1";
 
         public override string Author => "18107";
 

@@ -19,13 +19,20 @@ namespace BeamMeUp
         {
             if (PhotonNetwork.isMasterClient)
             {
-                PLPlayer player = HelperMethods.GetPlayerFromPlayerID(SenderID);
-                int hubID = PLEncounterManager.Instance.PlayerShip.MyTLI.SubHubID;
-                player.photonView.RPC("NetworkTeleportToSubHub", PhotonTargets.All, new object[]
+                if (arguments.ToLower() == "scomo")
                 {
-                hubID,
-                0
-                });
+                    Messaging.Echo(PhotonTargets.All, "<color=#ffff00>Scomo <Marketing></color> : I don't hold a teleporter mate.");
+                }
+                else
+                {
+                    PLPlayer player = HelperMethods.GetPlayerFromPlayerID(SenderID);
+                    int hubID = PLEncounterManager.Instance.PlayerShip.MyTLI.SubHubID;
+                    player.photonView.RPC("NetworkTeleportToSubHub", PhotonTargets.All, new object[]
+                    {
+                    hubID,
+                    0
+                    });
+                }
             }
         }
     }
